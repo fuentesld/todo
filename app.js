@@ -1,5 +1,6 @@
 const color = require("colors");
 const argv = require("./config/yargs").argv;
+const porHacer = require("./todo/todo");
 
 console.log(argv);
 
@@ -7,7 +8,8 @@ let comando = argv._[0];
 
 switch (comando) {
     case "crear":
-        console.log("crear por hacer");
+        let tarea = porHacer.crear(argv.descripcion);
+        console.log(tarea);
         break;
 
     case "listar":
